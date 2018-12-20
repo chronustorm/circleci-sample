@@ -47,12 +47,12 @@ jobs:
           name: run tests
           command: |
             mkdir test-results
-            pipenv run python -m pytest --junitxml=test-results/junit.xml
+            pipenv run python -m pytest --junitxml=test-results/junit.xml -v --cov=main --cov-report=html
 
       - store_test_results:
           path: test-results
 
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          path: htmlcov
+          destination: htmlcov
           
