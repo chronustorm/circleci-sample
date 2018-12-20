@@ -48,6 +48,9 @@ jobs:
           command: |
             pipenv run python test_sample.py
 
+      - store_test_results:
+          path: test-results
+
       - store_artifacts:
           path: test-reports
           destination: test-reports
